@@ -1,7 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+<<<<<<< HEAD
 /node_modules
+=======
+<<<<<<< HEAD
+node_modules
+=======
+/node_modules
+>>>>>>> f92152b3c0c7395d602c5b5849f6b0f9ec564ea0
+>>>>>>> main
 /.pnp
 .pnp.js
 
@@ -13,6 +21,13 @@
 
 # misc
 .DS_Store
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> f92152b3c0c7395d602c5b5849f6b0f9ec564ea0
+>>>>>>> main
 .env.local
 .env.development.local
 .env.test.local
@@ -20,4 +35,12 @@
 
 npm-debug.log*
 yarn-debug.log*
+<<<<<<< HEAD
 yarn-error.log*
+=======
+<<<<<<< HEAD
+yarn-error.log*
+=======
+yarn-error.log*
+>>>>>>> f92152b3c0c7395d602c5b5849f6b0f9ec564ea0
+>>>>>>> main

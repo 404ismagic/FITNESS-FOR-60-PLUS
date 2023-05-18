@@ -11,7 +11,14 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId })
     },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return Profile.findOne({ _id: context.user._id })
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
+
 
   Mutation: {
     addProfile: async (parent, { name, email, password }) => {
@@ -39,6 +46,19 @@ const resolvers = {
 
     removeProfile: async (parent, { profileId }) => {
       return Profile.findOneAndDelete({ _id: profileId })
+    },
+    saveFood:async (parent,args,context) => {  
+      try {
+        const updatedUser = await Profile.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedFoods: args } },
+          { new: true, runValidators: true }
+        );
+        return updatedUser
+      } catch (err) {
+        console.log(err);
+        throw new AuthenticationError('Incorrect password!')
+      }
     },
   },
 };
