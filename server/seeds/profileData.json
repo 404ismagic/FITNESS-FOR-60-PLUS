@@ -1,0 +1,28 @@
+
+[
+    {
+        
+        "name": "Sophia",
+        "email": "sophia12234@example.com",
+        "password": "123456",
+        "age": "65"
+    },
+    {
+        "name": "Mark",
+        "email": "mark12234@example.com",
+        "password": "123456",
+        "age": "70"
+    },
+    {
+        "name": "Betty",
+        "email": "betty12234@example.com",
+        "password": "123456",
+        "age": "63"
+    },
+    {
+        "name": "Ruth",
+        "email": "ruth12234@example.com",
+        "password": "123456",
+        "age": "58"
+    }
+]
