@@ -49,6 +49,7 @@ const resolvers = {
     },
     saveFood:async (parent,args,context) => {  
       try {
+        console.log(context.user)
         const updatedUser = await Profile.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { savedFoods: args } },

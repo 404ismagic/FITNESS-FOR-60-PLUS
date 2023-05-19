@@ -3,6 +3,7 @@
 # dependencies
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 node_modules
 =======
 <<<<<<< HEAD
@@ -13,6 +14,9 @@ node_modules
 >>>>>>> main
 =======
 /node_modules
+>>>>>>> main
+=======
+node_modules/
 >>>>>>> main
 /.pnp
 .pnp.js
@@ -39,10 +43,12 @@ node_modules
 .env.development.local
 .env.test.local
 .env.production.local
+package-lock.json
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -54,3 +60,6 @@ yarn-error.log*
 =======
 >>>>>>> main
 package-lock.json
+=======
+node_modules
+>>>>>>> main
