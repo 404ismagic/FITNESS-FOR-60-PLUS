@@ -1,3 +1,5 @@
+import MePages from './pages/MePages';
+import Home from './pages/Home';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
@@ -37,10 +39,14 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
             <Route 
+              path="/me" 
+              element={<MePages />}
+            />
+            <Route 
               path="/" 
               element={<Home />}
             />
-            <Route 
+            {/* <Route 
               path="/matchup" 
               element={<Matchup />}
             />
@@ -51,7 +57,7 @@ function App() {
             <Route 
               path="*"
               element={<NotFound />}
-            />
+            /> */}
           </Routes>
         </div>
       </Router>
