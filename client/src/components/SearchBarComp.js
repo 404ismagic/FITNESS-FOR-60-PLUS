@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import React, { useState} from "react";
+import { Form, Button} from 'react-bootstrap';
 
-import Token from '../utils/app';
-import { saveFood } from '../utils/API';
-import { saveFoodIds, getSavedFoodIds } from '../utils/localStorage';
+import {createSearchFood} from './.';
+import Token from './src/utils/App';
 
-const SearchFood = () => {
-  // create state for holding returned google api data
-  const [searchedFood, setSearchedFood] = useState([]);
-  // create state for holding our search field data
+const SearchBarForm = () => {
+
+    // create state for holding returned api data
+    const [searchedFoods, setSearchedFoods] = useState([]);
+    // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
-  // create state to hold saved bookId values
-  const [savedFoodIds, setSavedFoodIds] = useState(getSavedFoodIds());
+   // create state to hold saved foodId values
+   const [savedFoodIds, setSavedFoodIds] = useState(getSavedFoodIds());
 
-  // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
-  // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
+    // set up useEffect hook to save `savedFoodIds` 
   useEffect(() => {
     return () => saveFoodIds(savedFoodIds);
   });
 
-  // create method to search for books and set state on form submit
+  // create method to search for foods and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -29,7 +28,7 @@ const SearchFood = () => {
     }
 
     try {
-      const response = await searchGoogleBooks(searchInput);
+      const response = await foodAPI(searchInput);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -39,11 +38,11 @@ const SearchFood = () => {
 
       const foodData = items.map((food) => ({
         foodId: food.id,
-        description: food.description,
-        image: food.imageLinks?.thumbnail || '',
+        description: food.Info.description,
+        image: food.volumeInfo.imageLinks?.thumbnail || '',
       }));
 
-      setSearchedFood(foodData);
+      setSearchedFoods(foodData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -52,15 +51,15 @@ const SearchFood = () => {
 
   // create function to handle saving a food to our database
   const handleSaveFood = async (foodId) => {
-    // find the food in `searchedFood` state by the matching id
-    const foodToSave = searchedFood.find((food) => food.foodId === foodId);
+    // find the book in `searchedFoodss` state by the matching id
+    const foodToSave = searchedFoods.find((food) => food.foodId === foodId);
 
-    // get token
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
+   // get token
+     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    if (!token) {
-      return false;
-    }
+     if (!token) {
+       return false;
+     }
 
     try {
       const response = await saveFood(foodToSave, token);
@@ -76,8 +75,9 @@ const SearchFood = () => {
     }
   };
 
-  return (
-    <>
+
+return (
+<>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
           <h1>Search for Foods!</h1>
@@ -90,7 +90,7 @@ const SearchFood = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type='text'
                   size='lg'
-                  placeholder='Search for a book'
+                  placeholder='Search for a food'
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -105,19 +105,19 @@ const SearchFood = () => {
 
       <Container>
         <h2>
-          {searchedFood.length
-            ? `Viewing ${searchedFood.length} results:`
-            : 'Search for a food to begin'}
+          {searchedFoods.length
+            ? `Viewing ${searchedFoods.length} results:`
+            : 'Search for a book to begin'}
         </h2>
         <CardColumns>
-          {searchedFood.map((food) => {
+          {searchedFoods.map((food) => {
             return (
               <Card key={food.foodId} border='dark'>
                 {food.image ? (
-                  <Card.Img src={food.image} alt={`The cover for ${food.name}`} variant='top' />
+                  <Card.Img src={food.image} alt={`The cover for ${food.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{food.name}</Card.Title>
+                  <Card.Title>{food.title}</Card.Title>
                   <Card.Text>{food.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
@@ -125,8 +125,8 @@ const SearchFood = () => {
                       className='btn-block btn-info'
                       onClick={() => handleSaveFood(food.foodId)}>
                       {savedFoodIds?.some((savedFoodId) => savedFoodId === food.foodId)
-                        ? 'This food has already been saved!'
-                        : 'Save this Food!'}
+                         ? 'Save this Food!'
+                        : 'Done!'}
                     </Button>
                   )}
                 </Card.Body>
@@ -139,4 +139,4 @@ const SearchFood = () => {
   );
 };
 
-export default SearchFood;
+export default SearchBarForm;
