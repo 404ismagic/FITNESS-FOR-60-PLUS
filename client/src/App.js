@@ -1,4 +1,6 @@
 import React from 'react';
+import SaveFood from './src/pages/SaveFood';
+import LoginFormComp from './components/LoginFormComp';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -7,6 +9,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import LoginForm from './components/LoginFormComp';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -36,22 +39,22 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
-            <Route 
+            {/* <Route 
               path="/" 
               element={<Home />}
-            />
+            /> */}
             <Route 
-              path="/matchup" 
-              element={<Matchup />}
+              path="/login" 
+              element={<LoginFormComp />}
             />
-            <Route 
+            {/* <Route 
               path="/matchup/:id" 
               element={<Vote />}
             />
             <Route 
               path="*"
               element={<NotFound />}
-            />
+            /> */}
           </Routes>
         </div>
       </Router>

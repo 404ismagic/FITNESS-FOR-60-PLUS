@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 import { getMe, deleteFood } from '../utils/API';
-import Auth from '../utils/auth';
-import { removeFoodId } from '../utils/localStorage';
+import Token from './app';
+// import { removeFoodId } from '../utils/localStorage';
 
 const SavedFood = () => {
   const [userData, setUserData] = useState({});
@@ -37,7 +37,7 @@ const SavedFood = () => {
   }, [userDataLength]);
 
   // create function that accepts the food's mongo _id value as param and deletes the book from the database
-  const handleDeleteFood = async (bookId) => {
+  const handleDeleteFood = async (foodId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -69,7 +69,7 @@ const SavedFood = () => {
     <>
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
-          <h1>Viewing saved food!</h1>
+          <h1> Saved food!</h1>
         </Container>
       </Jumbotron>
       <Container>
@@ -82,7 +82,7 @@ const SavedFood = () => {
           {userData.savedFood.map((food) => {
             return (
               <Card key={food.foodId} border='dark'>
-                 {book.image ? <Card.Img src={food.image} alt={`The cover for ${food.title}`} variant='top' /> : null}
+                 {food.image ? <Card.Img src={food.image} alt={`The cover for ${food.title}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{food.name}</Card.Title>
                   <Card.Text>{food.description}</Card.Text>
