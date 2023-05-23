@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
-import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_ME } from '../utils/queries';
-import Me from '../components/Me'
+// import { Link } from 'react-router-dom';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_ME } from '../utils/queries';
+// import Me from '../components/Me'
 
 // const MePages = () => {
 //   const [calories,setCalories] = useState(0)

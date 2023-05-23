@@ -1,8 +1,6 @@
-import MePages from './pages/MePages';
+import CalorieCounter from './pages/MePages';
 import Home from './pages/Home';
 import React from 'react';
-import SavedFood from './src/pages/SaveFood';
-import LoginFormComp from './components/LoginFormComp';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -11,7 +9,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import LoginForm from './components/LoginFormComp';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -42,12 +39,12 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
             <Route 
-              path="/me" 
-              element={<MePages />}
-            />
-            <Route 
               path="/" 
               element={<Home />}
+            />
+            <Route 
+              path="/me" 
+              element={<h1>Me</h1>}
             />
             {/* <Route 
               path="/matchup" 
