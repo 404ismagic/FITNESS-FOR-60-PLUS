@@ -1,4 +1,4 @@
-{
+ {
   "name": "tech-matchup-app",
   "version": "1.0.0",
   "description": "",
@@ -14,16 +14,13 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0"
-  },
-  "dependencies": {
-<<<<<<< HEAD
-    "bcrypt": "^4.0.1"
-=======
-    "apollo-server-express": "^3.12.0",
-    "express": "^4.18.2",
-    "stack": "^0.1.0",
-    "start": "^5.1.0",
-    "yargs-parser": "^21.1.1"
->>>>>>> main
   }
 }
+
+
+
+
+
+
+
+

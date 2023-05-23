@@ -41,15 +41,6 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
-<<<<<<< HEAD
-            {/* <Route 
-              path="/" 
-              element={<Home />}
-            /> */}
-            <Route 
-              path="/login" 
-              element={<LoginFormComp />}
-=======
             <Route 
               path="/me" 
               element={<MePages />}
@@ -61,7 +52,6 @@ function App() {
             {/* <Route 
               path="/matchup" 
               element={<Matchup />}
->>>>>>> main
             />
             {/* <Route 
               path="/matchup/:id" 
