@@ -12,7 +12,6 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import 'bootstrap/dist/css/bootstrap.min.css';
 const httpLink = createHttpLink({
   uri: '/graphql',
 
