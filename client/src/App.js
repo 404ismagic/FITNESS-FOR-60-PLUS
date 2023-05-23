@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-//import CalorieCounter from './pages/MePages';
-=======
+import CalorieCounter from './pages/MePages';
 import MePages from './pages/MePages';
->>>>>>> main
 import Home from './pages/Home';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
