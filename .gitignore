@@ -1,7 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+node_modules
+=======
+<<<<<<< HEAD
+node_modules
+=======
+/node_modules
+>>>>>>> f92152b3c0c7395d602c5b5849f6b0f9ec564ea0
+>>>>>>> main
+=======
+/node_modules
+>>>>>>> main
+=======
 node_modules/
+>>>>>>> main
 /.pnp
 .pnp.js
 
@@ -13,6 +29,16 @@ node_modules/
 
 # misc
 .DS_Store
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> f92152b3c0c7395d602c5b5849f6b0f9ec564ea0
+>>>>>>> main
+=======
+>>>>>>> main
 .env.local
 .env.development.local
 .env.test.local
@@ -23,4 +49,18 @@ package-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+yarn-error.log*
+=======
+yarn-error.log*
+>>>>>>> f92152b3c0c7395d602c5b5849f6b0f9ec564ea0
+>>>>>>> main
+=======
+>>>>>>> main
+package-lock.json
+=======
 node_modules
+>>>>>>> main
