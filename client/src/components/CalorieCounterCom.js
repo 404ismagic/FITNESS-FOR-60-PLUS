@@ -1,7 +1,6 @@
-import React from 'react'
 import React,{useState} from 'react'
 
-const CalorieCounter = () => {
+const CalorieCounter = ({day}) => {
   const [meal1Calories, setMeal1Calories] = useState(0);
   const [meal2Calories, setMeal2Calories] = useState(0);
   const [meal3Calories, setMeal3Calories] = useState(0);
@@ -21,7 +20,7 @@ const CalorieCounter = () => {
       </header>
 
       <div className="content">
-        <h1>Calorie Counter</h1>
+        <h1>{day}: Calories</h1>
 
         <div className="meal-input">
           <label>Meal 1:</label>
