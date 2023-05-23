@@ -6,20 +6,15 @@ import Token from './src/utils/App';
 
 const SearchBarForm = () => {
 
-    // create state for holding returned api data
     const [searchedFoods, setSearchedFoods] = useState([]);
-    // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
-   // create state to hold saved foodId values
    const [savedFoodIds, setSavedFoodIds] = useState(getSavedFoodIds());
 
-    // set up useEffect hook to save `savedFoodIds` 
   useEffect(() => {
     return () => saveFoodIds(savedFoodIds);
   });
 
-  // create method to search for foods and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -49,9 +44,7 @@ const SearchBarForm = () => {
     }
   };
 
-  // create function to handle saving a food to our database
   const handleSaveFood = async (foodId) => {
-    // find the book in `searchedFoodss` state by the matching id
     const foodToSave = searchedFoods.find((food) => food.foodId === foodId);
 
    // get token
@@ -68,7 +61,6 @@ const SearchBarForm = () => {
         throw new Error('something went wrong!');
       }
 
-      // if food successfully saves to user's account, save food id to state
       setSavedFoodIds([...savedFoodIds, foodToSave.foodId]);
     } catch (err) {
       console.error(err);

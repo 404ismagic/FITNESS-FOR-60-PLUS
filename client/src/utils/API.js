@@ -15,11 +15,5 @@ function getNutrimix (foodstring){
     
 }
 
-/* 
-var text="sausage"
-getNutrimix(text).then( (data)=> {
-console.log(data)
-}  )
-*/
 
 module.exports=getNutrimix

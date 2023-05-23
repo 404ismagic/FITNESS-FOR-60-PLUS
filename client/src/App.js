@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //import CalorieCounter from './pages/MePages';
+=======
+import MePages from './pages/MePages';
+>>>>>>> main
 import Home from './pages/Home';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -48,7 +52,7 @@ function App() {
             />
             <Route 
               path="/me" 
-              element={<h1>me</h1>}
+              element={<MePages />}
             />
              <Route
               path="/" 
