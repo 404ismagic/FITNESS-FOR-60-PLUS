@@ -44,7 +44,7 @@ function App() {
             />
             <Route 
               path="/me" 
-              element={<h1>Me</h1>}
+              element={<h1>me</h1>}
             />
             {/* <Route 
               path="/matchup" 
