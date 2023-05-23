@@ -1,6 +1,8 @@
 import MePages from './pages/MePages';
 import Home from './pages/Home';
 import React from 'react';
+import SavedFood from './src/pages/SaveFood';
+import LoginFormComp from './components/LoginFormComp';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -9,6 +11,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import LoginForm from './components/LoginFormComp';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -50,7 +53,7 @@ function App() {
               path="/matchup" 
               element={<Matchup />}
             />
-            <Route 
+            {/* <Route 
               path="/matchup/:id" 
               element={<Vote />}
             />
