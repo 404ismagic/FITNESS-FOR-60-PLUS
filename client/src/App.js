@@ -1,7 +1,7 @@
 import MePages from './pages/MePages';
 import Home from './pages/Home';
 import React from 'react';
-import SaveFood from './src/pages/SaveFood';
+import SavedFood from './src/pages/SaveFood';
 import LoginFormComp from './components/LoginFormComp';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
