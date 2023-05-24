@@ -23,6 +23,7 @@ const MePages = () => {
   return (
     <div>
       <h1>My Page</h1>
+      <div></div>
       <div className='card-container'>
         {days.map((day) => (
         <CalorieCounter day= {day} />
