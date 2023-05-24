@@ -23,22 +23,21 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function Login() {
     return (
-      <Container>
+      <Container className='login template d-flex justify-content-center align-items-center 100-w vh-100 bg-primary'>
         <h1>Welcome to Fitness 60+!</h1>
-        <Row>
-          <Col>
-            <div className='card'>
+        <div className='40-w p-5 rounded'>
+        <form>
+            <div className='mb-2'>
               <h2>Welcome Back!</h2>
               <LoginFormComp />
             </div>
-          </Col>
-          <Col>
-            <div className='card'>
+
+            <div className='mb-2'>
               <h2>New to Fitness 60+?</h2>
               <SignupFormComp />
             </div>
-          </Col>
-        </Row>
+        </form>
+        </div>
       </Container>
     );
   }
