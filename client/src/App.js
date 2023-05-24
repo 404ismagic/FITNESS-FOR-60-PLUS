@@ -1,8 +1,7 @@
-import CalorieCounter from './pages/MePages';
-import MePages from './pages/MePages';
-import Login from './pages/LoginPg';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MePages from './pages/MePages'
+import Login from './pages/LoginPg'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
   ApolloClient,
   InMemoryCache,
@@ -11,10 +10,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
 const httpLink = createHttpLink({
   uri: '/graphql',
-
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
