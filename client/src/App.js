@@ -1,5 +1,5 @@
 import MePages from './pages/MePages';
-import Home from './pages/Home';
+import Login from './pages/LoginPg';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
@@ -40,7 +40,7 @@ function App() {
           <Routes>
             <Route 
               path="/" 
-              element={<Home />}
+              element={<Login />}
             />
             <Route 
               path="/me" 
