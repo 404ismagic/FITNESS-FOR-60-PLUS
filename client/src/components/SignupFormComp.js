@@ -37,6 +37,7 @@ const SignupForm = () => {
     
     } catch (err) {
       console.error(err);
+      console.log(error);
       setShowAlert(true);
     }
 
@@ -98,7 +99,7 @@ const SignupForm = () => {
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
-          Submit
+          Sign Up!
         </Button>
       </Form>
     </>
