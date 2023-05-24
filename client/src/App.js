@@ -1,5 +1,6 @@
 import MePages from './pages/MePages'
 import Login from './pages/LoginPg'
+import SearchResultsPage from './pages/SearchResultsPg'
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
@@ -9,7 +10,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Signup from './pages/Signup';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -47,27 +47,10 @@ function App() {
               path="/me" 
               element={<MePages />}
             />
-             <Route
-              path="/" 
-              element={<Login />}
-            />
-            <Route
-              path="/signup"
-              element={<Signup />}
-            />
-  
-            {/* <Route 
-              path="/matchup" 
-              element={<Matchup />}
-            />
-            {/* <Route 
-              path="/matchup/:id" 
-              element={<Vote />}
-            />
             <Route 
-              path="*"
-              element={<NotFound />}
-            /> */}
+              path="/searchresults"
+              element={<SearchResultsPage />}
+            /> 
           </Routes>
         </div>
       </Router>
