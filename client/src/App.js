@@ -1,7 +1,8 @@
-import MePages from './pages/MePages';
-import Login from './pages/LoginPg';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MePages from './pages/MePages'
+import Login from './pages/LoginPg'
+import SearchResultsPage from './pages/SearchResultsPg'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
   ApolloClient,
   InMemoryCache,
@@ -46,18 +47,10 @@ function App() {
               path="/me" 
               element={<MePages />}
             />
-            {/* <Route 
-              path="/matchup" 
-              element={<Matchup />}
-            />
-            {/* <Route 
-              path="/matchup/:id" 
-              element={<Vote />}
-            />
             <Route 
-              path="*"
-              element={<NotFound />}
-            /> */}
+              path="/searchresults"
+              element={<SearchResultsPage />}
+            /> 
           </Routes>
         </div>
       </Router>
