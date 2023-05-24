@@ -15,48 +15,22 @@ const MePages = () => {
   // function saveCalories() {
   //   console.log(calories)
   // }
-//   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-//   if (loading) {
-//     return (
-//       <h1>Loading your Page</h1>
-//     )
-//   }
-//   return (
-//     <div>
-//       <h1>My Page</h1>
-//       <div><SearchBar /></div>
-//       <div className='card-container'>
-//         {days.map((day) => (
-//         <CalorieCounter day= {day} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-if (loading) {
-  return <h1>Loading your Page</h1>;
-}
-
-return (
-  <div>
-    <h1>My Page</h1>
-    <div></div>
-    <div className="card-container">
-      {days.map((day) => (
-        <Card key={day} className="mb-3">
-          <Card.Body>
-            <Card.Title>{day}</Card.Title>
-            <CalorieCounter day={day} />
-          </Card.Body>
-        </Card>
-      ))}
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  if (loading) {
+    return (
+      <h1>Loading your Page</h1>
+    )
+  }
+  return (
+    <div>
+      <h1>My Page</h1>
+      <div><SearchBar /></div>
+      <div className='card-container'>
+        {days.map((day) => (
+        <CalorieCounter day= {day} />
+        ))}
+      </div>
     </div>
-  </div>
-);
-
+  );
 }
-
- export default MePages
+export default MePages
