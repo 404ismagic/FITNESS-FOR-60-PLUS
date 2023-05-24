@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/SearchBarComp';
 import { useQuery } from '@apollo/client';
+import { SEARCHED_FOOD } from '../utils/queries'
+import {useParams} from 'react-router-dom'
 
 const SearchResultsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const {search}= useParams();
+
+  const {loading, data, error} = useQuery(SEARCHED_FOOD, {
+    variables: {search: search}
+  })
 
   const handleSearch = (term) => {
     setSearchTerm(term);
