@@ -10,8 +10,8 @@ function Signup() {
         <SignupFormComp />
       </div>
     );
-  };     
-
+  };  
+  
 
 
 
