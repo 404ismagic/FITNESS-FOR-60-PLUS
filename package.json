@@ -1,4 +1,4 @@
- {
+{
   "name": "tech-matchup-app",
   "version": "1.0.0",
   "engines": {
@@ -17,13 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
   }
 }
-
-
-
-
-
-
-
-
