@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+// import * as serviceWorkerRegistration from './serviceWorkerRegistration';
     
 
  ReactDOM.render(
@@ -12,4 +12,4 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
    document.getElementById('root')
  );
 
- serviceWorkerRegistration.unregister();
+//  serviceWorkerRegistration.unregister();

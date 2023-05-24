@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import SearchBar from '../components/SearchBarComp';
-import { useQuery } from '@apollo/client';
+import React, { useState } from 'react'
+import SearchBar from '../components/SearchBarComp'
+import { UseQuery } from 'react'
 import { SEARCHED_FOOD } from '../utils/queries'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const SearchResultsPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const {search}= useParams();
+  const [searchResults, setSearchResults] = useState([])
+  const { search } = useParams();
 
-  const {loading, data, error} = useQuery(SEARCHED_FOOD, {
-    variables: {search: search}
-  })
+  const handleSearch = async (term) => {
+    try {
+      const { loading, data, error } = await UseQuery(SEARCHED_FOOD, {
+        variables: { search: term },
+      })
+      
 
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-    // Make a GraphQL query using the search term
-    // Update the searchResults state with the fetched data
-    // fetchSearchResults(term)
-    //   .then((data) => setSearchResults(data))
-    //   .catch((error) => console.error(error));
+      setSearchResults([])
+    } catch (error) {
+      console.error(error)
+    }
   };
 
   return (
@@ -38,3 +37,4 @@ const SearchResultsPage = () => {
 };
 
 export default SearchResultsPage
+

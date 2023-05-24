@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import {useSearchParams} from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
-let Navigate = useNavigate()
+  let Navigate = useNavigate()
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
