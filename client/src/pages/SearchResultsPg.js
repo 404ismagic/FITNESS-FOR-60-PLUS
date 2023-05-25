@@ -26,39 +26,20 @@ const SearchResultsPage = () => {
     }
   };
 
-//   return (
-//     <div>
-//       <h1>Search Results</h1>
-//       <SearchBar onSearch={handleSearch} />
-//       {/* Render the search results */}
-//       {searchResults.map((result) => (
-//         <div key={result.id}>
-//           <h3>{result.title}</h3>
-//           <p>{result.description}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
+   return (
+     <div>
+       <h1>Search Results</h1>
+       <SearchBar onSearch={handleSearch} />
+       {/* Render the search results */}
+       {searchResults.map((result) => (
+         <div key={result.id}>
+           <h3>{result.title}</h3>
+           <p>{result.description}</p>
+         </div>
+       ))}
+     </div>
+   );
+ };
 
-return (
-  <Container>
-    <Row className="justify-content-center">
-      <Col xs={12} md={8} lg={6}>
-        <h1 className="text-center">Search Results</h1>
-        <Form.Group controlId="searchBar">
-          <Form.Control type="text" placeholder="Search" onChange={handleSearch} />
-        </Form.Group>
-        {searchResults.map((result) => (
-          <div key={result.id} className="mb-4">
-            <h3>{result.title}</h3>
-            <p>{result.description}</p>
-          </div>
-        ))}
-        </Col>
-      </Row>
-    </Container>
-  );
-};
 
 export default SearchResultsPage

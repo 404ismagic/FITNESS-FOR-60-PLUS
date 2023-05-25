@@ -1,3 +1,32 @@
 .card-container {
     display: flex;
 }
+
+.container {
+    color: white;
+};
+
+/* // smal devices */
+
+@media (max-width: 575px) {
+    .container {
+        background-color: brown;
+        color: white;
+    }
+};
+
+@media (min-width: 575px) {
+    .container {
+        background-color: rgb(212, 159, 159);
+        color: white;
+    }
+};
+
+@media (min-width: 768px) {
+    .container {
+        background-color: brown;
+        color: white;
+    }
+};
+
+
