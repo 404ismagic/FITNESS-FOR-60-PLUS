@@ -40,11 +40,12 @@ const MePages = () => {
       <div className="card-container">
         {days.map((day) => (
           <CalorieCounter
-            key={day}
-            day={day}
-            saveCalories={saveCalories}
-            goals={goals}
-            currentCalorieCount={currentCalorieCount}
+          key={day}
+          day={day}
+          saveCalories={saveCalories}
+          goals={goals}
+          currentCalorieCount={currentCalorieCount}
+          setCurrentCalorieCount={setCurrentCalorieCount}
           />
         ))}
       </div>

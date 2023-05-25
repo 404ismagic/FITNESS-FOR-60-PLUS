@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-// import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  let Navigate = useNavigate()
+  const navigate = useNavigate();
+
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    Navigate(`/searchresults/${searchTerm}`)
+    onSearch(searchTerm);
+    navigate(`/searchresults`);
   };
 
   return (
