@@ -1,5 +1,18 @@
 /* MePages.css */
 
+/* Modern Font */
+body {
+  font-family: "Your Modern Font", sans-serif; /* Replace "Your Modern Font" with the name of your preferred modern font */
+  margin: 20px; /* Add margin to create breathing room around the content */
+  background-image: url('https://images.creativemarket.com/0.1.0/ps/7358572/1820/1213/m1/fpnw/wm1/k127klsodfswwgb0i8quloaojdj8eizs6frih2d1e7uj7qaps0hhzzy3gdygsgqw-.jpg?1574657249&s=c6dfe32012079f3e58773b8c3b3d225c');
+  background-size: cover;
+}
+
+button{
+  margin-top: 10px;
+color: rgba(240, 248, 255, 0.997);
+}
+
 /* Grid System */
 .card-container {
     display: grid;
@@ -35,22 +48,7 @@
     border-radius: 10px;
   }
   
-  /* Whitespace */
-  body {
-    margin: 20px; /* Add margin to create breathing room around the content */
-  }
-  
-  /* Modern Font */
-  body {
-    font-family: "Your Modern Font", sans-serif; /* Replace "Your Modern Font" with the name of your preferred modern font */
-  }
-  
-  body {
-    background-image: url('https://images.creativemarket.com/0.1.0/ps/7358572/1820/1213/m1/fpnw/wm1/k127klsodfswwgb0i8quloaojdj8eizs6frih2d1e7uj7qaps0hhzzy3gdygsgqw-.jpg?1574657249&s=c6dfe32012079f3e58773b8c3b3d225c');
-    background-size: cover;
-  }
-  
-  .card-container {
+   .card-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 40px; /* Increase the gap between cards */
@@ -82,8 +80,4 @@
     color: rgb(255, 255, 255); /* Meal cards */
     opacity: 0.7;
     margin-top: 5px
-}
-button{
-    margin-top: 10px;
-  color: rgba(240, 248, 255, 0.997);
 }
