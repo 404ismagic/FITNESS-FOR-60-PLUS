@@ -1,32 +1,34 @@
-import React, { useState } from 'react'
-import SearchBar from '../components/SearchBarComp'
-import { useQuery } from '@apollo/client'
-import { SEARCHED_FOOD } from '../utils/queries'
-// import { useParams } from 'react-router-dom'
+import React, { useState } from 'react';
+import SearchBarComp from '../components/SearchBarComp';
+import { useQuery } from '@apollo/client';
+import { SEARCHED_FOOD } from '../utils/queries';
 
 const SearchResultsPage = () => {
-  const [searchResults, setSearchResults] = useState([])
-  // const { search } = useParams();
+  const [searchResults, setSearchResults] = useState([]);
+  const { loading, data, error } = useQuery(SEARCHED_FOOD);
 
-  const HandleSearch = async (term) => {
-    const { loading, data, error } = await useQuery(SEARCHED_FOOD, {
+  const handleSearch = async (term) => {
+    const { loading: searchLoading, data: searchData, error: searchError } = await useQuery(SEARCHED_FOOD, {
       variables: { search: term },
-    })
+    });
     try {
-      const results = data?.search || []
 
-      setSearchResults(results)
+      if (!searchLoading && searchData) {
+        const results = searchData.search || [];
+        setSearchResults(results);
+      }
     } catch (err) {
-      console.error(err)
-      console.log(error)
-      console.log(loading)
+      console.error(err);
+      console.log(error);
+      console.log(loading);
     }
   };
 
   return (
     <div>
       <h1>Search Results</h1>
-      <SearchBar onSearch={HandleSearch} />
+      {/* Pass the handleSearch function to the SearchBarComp component */}
+      <SearchBarComp onSearch={handleSearch} />
       {/* Render the search results */}
       {searchResults.map((result) => (
         <div key={result.id}>
@@ -38,5 +40,4 @@ const SearchResultsPage = () => {
   );
 };
 
-export default SearchResultsPage
-
+export default SearchResultsPage;
