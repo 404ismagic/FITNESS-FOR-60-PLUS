@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopBar = ({ goals, currentCalorieCount }) => {
+const ToolBar = ({ goals, currentCalorieCount }) => {
   return (
     <div className="top-bar">
       <div className="goals">
@@ -15,4 +15,4 @@ const TopBar = ({ goals, currentCalorieCount }) => {
   );
 };
 
-export default TopBar;
+export default ToolBar;

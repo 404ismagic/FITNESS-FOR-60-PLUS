@@ -5,7 +5,7 @@ import { QUERY_ME } from '../utils/queries';
 import Profile from '../../../server/models/Profile';
 import CalorieCounter from '../components/CalorieCounterCom';
 import SearchBar from '../components/SearchBarComp';
-import TopBar from '../components/TopBar';
+import ToolBar from '../components/ToolBarCom';
 
 const MePages = () => {
   const { loading, data } = useQuery(QUERY_ME, {
@@ -41,7 +41,7 @@ const MePages = () => {
   return (
     <div>
       <h1>My Page</h1>
-      <TopBar goals={goals} currentCalorieCount={currentCalorieCount} />
+      <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} />
       <div>
         <SearchBar />
       </div>
