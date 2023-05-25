@@ -9,7 +9,7 @@ const ToolBar = ({ goals, currentCalorieCount }) => {
       </div>
       <div className="calorie-count">
         <h3>Current Calorie Count:</h3>
-        <p>{ currentCalorieCount}</p>
+        <p>{currentCalorieCount}</p>
       </div>
     </div>
   );
