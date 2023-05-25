@@ -23,5 +23,7 @@ query Search($search: String!) {
     tag_name
     serving_qty
     tag_id
-  }
-  `
+}
+}
+`;
+  

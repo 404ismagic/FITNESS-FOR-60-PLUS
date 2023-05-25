@@ -12,4 +12,4 @@ import App from './App';
    document.getElementById('root')
  );
 
-//  serviceWorkerRegistration.unregister();
+// serviceWorkerRegistration.unregister();
