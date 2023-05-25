@@ -6,6 +6,8 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const PORT = process.env.PORT || 3001;
 const app = express();
+const dotenv = require("dotenv")
+dotenv.config()
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -34,5 +36,5 @@ const startApolloServer = async (typeDefs, resolvers) => {
     })
   })
   };
-  startApolloServer(typeDefs, resolvers);
+startApolloServer(typeDefs, resolvers);
  

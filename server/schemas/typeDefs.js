@@ -17,8 +17,18 @@ const typeDefs = gql`
     token: ID!
     profile: Profile
   }
+  type Search {
+   food_name: String
+   serving_unit: String
+   tag_name: String
+   serving_qty: String
+   common_type: String
+   tag_id: String
+   locale: String 
+  }
 
   type Query {
+    search(search: String!): [Search]
     me: Profile 
     profiles: [Profile]!
     profile(profileId: ID!): Profile
