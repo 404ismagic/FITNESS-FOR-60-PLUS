@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import CalorieCounter from '../components/CalorieCounterCom';
+import './MePages.css';
+import { Link } from 'react-router-dom';
+
 
 const MePages = () => {
   // const [calories, setCalories] = useState(0)
@@ -22,11 +25,14 @@ const MePages = () => {
   }
   return (
     <div>
-      <h1>My Page</h1>
+      <header className="header">
+        <Link to="/profile">Profile</Link>
+      </header>
+      <h1 className='one'> My Page</h1>
       <div></div>
       <div className='card-container'>
-        {days.map((day) => (
-        <CalorieCounter day= {day} />
+        {days.map((day, index) => (
+          <CalorieCounter key={index} day={day} />
         ))}
       </div>
     </div>
