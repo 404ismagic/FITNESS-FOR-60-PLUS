@@ -24,7 +24,7 @@ const CalorieCounter = ({day}) => {
 
         <div className="meal-input">
           <label>Meal 1:</label>
-          <input type="number" value={meal1Calories} onChange={e => setMeal1Calories(parseInt(e.target.value, 10))} />
+          <input className='input-field' type="number" value={meal1Calories} onChange={e => setMeal1Calories(parseInt(e.target.value, 10))} />
         </div>
 
         <div className="meal-input">

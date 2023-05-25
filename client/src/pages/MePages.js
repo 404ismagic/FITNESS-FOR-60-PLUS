@@ -2,8 +2,16 @@
 // import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
+
+import CalorieCounter from '../components/CalorieCounterCom';
+import './MePages.css';
+import { Link } from 'react-router-dom';
+
+
+
 import CalorieCounter from '../components/CalorieCounterCom'
 import SearchBar from '../components/SearchBarComp'
+
 const MePages = () => {
   // const [calories, setCalories] = useState(0)
   // remember to add data
@@ -23,11 +31,15 @@ const MePages = () => {
   }
   return (
     <div>
+      <header className="header">
+        <Link to="/profile">Profile</Link>
+      </header>
+      <h1 className='one'> My Page</h1>
       <h1>My Page</h1>
       <div><SearchBar /></div>
       <div className='card-container'>
-        {days.map((day) => (
-        <CalorieCounter day= {day} />
+        {days.map((day, index) => (
+          <CalorieCounter key={index} day={day} />
         ))}
       </div>
     </div>

@@ -1,0 +1,72 @@
+/* LoginPg.css */
+body {
+    /* background-image: url('https://img.freepik.com/free-photo/happy-senior-couple-having-fun-while-having-lunch-dining-room-focus-is-ma-feeding-his-wife_637285-5554.jpg'); */
+    background-size: cover;
+  }
+/* Typography */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: white;
+  }
+.two{
+    color: white;
+    font-size: 3rem;
+    background-color:#3f3c3c;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 30px;
+  
+}
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Grid System */
+  .card-one {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    background-color: #3f3c3c;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 20px;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 250px;
+    margin-right: 200px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Add any additional styling for the Login page here */
+  
