@@ -12,7 +12,7 @@ mutation addProfile($name: String!, $email: String!, $password: String!) {
   }`;
 
   export const LOGIN_PROFILE = gql`
-  mutation Login($email: String!, $password: String!) {
+  mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
       profile {

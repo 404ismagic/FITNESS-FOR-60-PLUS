@@ -1,6 +1,9 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const foodSchema = require("./Food");
+const { Profile } = require("../models/Profile");
+const { AuthenticationError } = require("apollo-server-express");
+
 const profileSchema = new Schema(
   {
     name: {
@@ -45,14 +48,15 @@ profileSchema.pre("save", async function (next) {
 profileSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
+
 profileSchema.virtual("totalCalories").get(function () {
-  //return this.savedFoods.length;
   let totalCalories = 0;
   for (let i = 0; i < this.savedFoods.length; i++) {
     totalCalories += this.savedFoods[i].calories;
   }
   return totalCalories;
 });
+
 const Profile = model("Profile", profileSchema);
 
 module.exports = Profile;
