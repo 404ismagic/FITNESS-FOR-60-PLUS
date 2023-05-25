@@ -2,10 +2,15 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
-import Profile from '../../../server/models/Profile';
+
 import CalorieCounter from '../components/CalorieCounterCom';
-import SearchBar from '../components/SearchBarComp';
-import ToolBar from '../components/ToolBarCom';
+import './MePages.css';
+import { Link } from 'react-router-dom';
+
+
+
+import CalorieCounter from '../components/CalorieCounterCom'
+import SearchBar from '../components/SearchBarComp'
 
 const MePages = () => {
   const { loading, data } = useQuery(QUERY_ME, {
@@ -40,18 +45,15 @@ const MePages = () => {
 
   return (
     <div>
+      <header className="header">
+        <Link to="/profile">Profile</Link>
+      </header>
+      <h1 className='one'> My Page</h1>
       <h1>My Page</h1>
-      <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} />
-      <div>
-        <SearchBar />
-      </div>
-      <div className="card-container">
-        {days.map((day) => (
-          <CalorieCounter 
-          key={day}
-        day={day}
-        saveCalories={saveCalories}
-          />
+      <div><SearchBar /></div>
+      <div className='card-container'>
+        {days.map((day, index) => (
+          <CalorieCounter key={index} day={day} />
         ))}
       </div>
       <div>
