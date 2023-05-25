@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Profile from '../../../server/models/Profile';
 
 const CalorieCounter = ({day}) => {
   const [meal1Calories, setMeal1Calories] = useState(0);
@@ -7,7 +8,15 @@ const CalorieCounter = ({day}) => {
   const [meal4Calories, setMeal4Calories] = useState(0);
 
   function saveCalories() {
-    // Perform any desired operations with the entered calorie values
+      const profile = new Profile(); // Create an instance of the Profile model
+      const totalCalories = profile.calculateTotalCalories([
+        meal1Calories,
+        meal2Calories,
+        meal3Calories,
+        meal4Calories,
+      ]);
+      saveCalories(totalCalories);
+    
     console.log('Meal 1 calories:', meal1Calories);
     console.log('Meal 2 calories:', meal2Calories);
     console.log('Meal 3 calories:', meal3Calories);
