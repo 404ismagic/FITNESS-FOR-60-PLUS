@@ -1,4 +1,5 @@
-import React, { useState, useMutation } from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../utils/auth';
@@ -8,7 +9,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [login, { error }] = useMutation(LOGIN_PROFILE);
+  const {login, error } = useMutation(LOGIN_PROFILE)
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
