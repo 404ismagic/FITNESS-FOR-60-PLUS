@@ -57,6 +57,6 @@ profileSchema.virtual("totalCalories").get(function () {
   return totalCalories;
 });
 
-const Profile = model("Profile", profileSchema);
+const userProfile = model("Profile", profileSchema);
 
-module.exports = Profile;
+module.exports = userProfile;
