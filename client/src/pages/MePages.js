@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import CalorieCounter from '../components/CalorieCounterCom';
 import SearchBar from '../components/SearchBarComp';
 import ToolBar from '../components/ToolBarCom';
-// comment to fix merge issue
+
 const MePages = () => {
   const { loading, data } = useQuery(QUERY_ME, {
     fetchPolicy: 'no-cache'
