@@ -32,29 +32,45 @@ const MePages = () => {
 
   return (
     <div>
-      <h1>My Page</h1>
-      <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} />
-      <div>
-        <SearchBar />
-      </div>
-      <div className="card-container">
-        {days.map((day) => (
-          <CalorieCounter
+    <h1>My Page</h1>
+    <div>
+      <SearchBar />
+    </div>
+    <div className="card-container">
+      {days.map((day) => (
+        <CalorieCounter
           key={day}
           day={day}
           saveCalories={saveCalories}
           goals={goals}
           currentCalorieCount={currentCalorieCount}
           setCurrentCalorieCount={setCurrentCalorieCount}
-          />
-        ))}
+        />
+      ))}
+    </div>
+    <div className="bottom-container">
+      <div>
+        <label>Current Calorie Count:</label>
+        <input
+          type="text"
+          value={currentCalorieCount}
+          onChange={(e) => setCurrentCalorieCount(e.target.value)}
+        />
       </div>
       <div>
-        <label>New Goal:</label>
-        <input type="text" value={newGoal} onChange={handleGoalChange} />
+        <label>Goal Calorie Count:</label>
+        <input
+          type="text"
+          value={goals}
+          onChange={(e) => setGoals(e.target.value)}
+        />
       </div>
-      <button onClick={() => setGoals(newGoal)}>Set Goal</button>
+      <div>
+      {/* <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} /> */}
+</div>
     </div>
+  </div>
+  
   );
 };
 

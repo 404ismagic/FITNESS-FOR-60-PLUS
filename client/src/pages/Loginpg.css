@@ -1,72 +1,107 @@
 /* LoginPg.css */
 body {
-    /* background-image: url('https://img.freepik.com/free-photo/happy-senior-couple-having-fun-while-having-lunch-dining-room-focus-is-ma-feeding-his-wife_637285-5554.jpg'); */
-    background-size: cover;
-  }
-/* Typography */
-h1 {
-    font-size: 36px;
-    text-align: center;
-    color: white;
-  }
-.two{
-    color: white;
-    font-size: 3rem;
-    background-color:#3f3c3c;
-    margin-left: 500px;
-    margin-right: 500px;
-    border-radius: 30px;
-  
+  background-image: url('https://images.creativemarket.com/0.1.0/ps/7358572/1820/1213/m1/fpnw/wm1/k127klsodfswwgb0i8quloaojdj8eizs6frih2d1e7uj7qaps0hhzzy3gdygsgqw-.jpg?1574657249&s=c6dfe32012079f3e58773b8c3b3d225c');
+  background-repeat: no-repeat;
+  background-size: cover;
+color: white;
+font-size: 2rem;
 }
-  h2 {
-    font-size: 30px;
-    text-align: center;
-    color: white;
-  }
-  
-  /* Grid System */
-  .card-one {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-    background-color: #3f3c3c;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    margin-left: 500px;
-    margin-right: 500px;
-    border-radius: 20px;
-  }
-  
-  /* Form Styling */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="email"] {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 250px;
-    margin-right: 200px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
 
-  /* Add any additional styling for the Login page here */
-  
+/* Typography: For MyPages Header */
+h1, h2 {
+  font-size: 36px;
+  text-align: center;
+  color: white;
+  background-color: #3f3c3cb1; 
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 10px;
+}
+/* For Loginpages Header*/
+.two {
+  /* /* color: white; */
+  font-size: 3rem;
+  background-color: #3f3c3c;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 10px;
+  max-width: 500px;
+}
+
+/* For LoginPage.js containers */
+.card-one {
+  display: grid;
+  grid-gap: 20px;
+  background-color: #3f3c3ca8;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; 
+  margin: 0 auto; /* Center the container horizontally */
+  margin-top: 20px; /* Add margin to the top */
+  margin-bottom: 20px; /* Add margin to the bottom */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Mypage.js Searchbar */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+/* LoginPage.Js */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+}
+
+/* All buttons on all pages */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 300px; 
+  margin-top: 25px;
+  margin-bottom: 25px
+}
+
+button:hover {
+  background-color: #143c67;
+  color: white;
+}
+
+/* Mypage card containers */
+.card-container{
+  margin-left: 200px;
+  margin-right:200px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* Creates a box around card container */
+.card-container > div {
+  border: 1px solid #000000;
+  padding: 10px;
+  margin: 10px;
+  background-color: #3f3c3cae;
+  padding: 10px;
+  flex: 1 0 400px;
+}
+.bottom-container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 225px;
+}

@@ -24,8 +24,7 @@ Tecnologies Used
 ```
 
 ## Demo
-
-[Demo video link][
+![Screenshot](images/screenshot.png)
 
 ## Table of Contents
 
