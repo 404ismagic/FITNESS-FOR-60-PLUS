@@ -4,7 +4,7 @@
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
-    grid-gap: 40px; /* Increase the gap between grid items */
+    grid-gap: 100px; /* Increase the gap between grid items */
     transform-style: preserve-3d; /* Add 3D transformation to the container */
     perspective: 1000px; /* Set the perspective for the 3D effect */
   }
@@ -13,23 +13,21 @@
   }
 
   .meal-input{
-    color: white;
+    color: black;
   }
   h1.one {
     font-size: 72px; /* Increase the font size for the main heading */
-    color: rgb(255, 255, 255);
+    color: rgb(159, 109, 109);
     text-align: center;
     border-radius: 10px;
     position: relative; /* Add position relative for z-index */
+    background-color: #3f3c3c;
+    margin-left: 200px;
   }
   
   h1.one::after {
     content: ""; /* Add a pseudo-element */
     position: absolute; /* Position it absolutely within the container */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: #3f3c3c; /* Make the background color opaque white */
     z-index: -1; /* Push it behind the text */
     border-radius: 10px;
@@ -46,24 +44,10 @@
   }
   
   body {
-    background-image: url('https://images.creativemarket.com/0.1.0/ps/7358572/1820/1213/m1/fpnw/wm1/k127klsodfswwgb0i8quloaojdj8eizs6frih2d1e7uj7qaps0hhzzy3gdygsgqw-.jpg?1574657249&s=c6dfe32012079f3e58773b8c3b3d225c');
     background-size: cover;
   }
   
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 40px; /* Increase the gap between cards */
-    background-color: #3f3c3c; /* Make the background color opaque white */
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap; /* Wrap the containers along the vertical axis */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow for the floating effect */
-    color: rgb(255, 255, 255); /* Set font color to black */
-    text-align: center; /* Center align the text */
-    border-radius: 10px;
-  }
-  
+
   .card {
     background-color: white;
     padding: 20px;
