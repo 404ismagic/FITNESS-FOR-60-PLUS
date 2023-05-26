@@ -3,6 +3,20 @@
 Joaquin-working-branch
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
+
+
+
+
+![87d4f4f01be3515fad47b8b2c934e8f1](https://github.com/404ismagic/FITNESS-FOR-60-PLUS/assets/116915664/d00c2bf4-d0c0-48f1-96ef-c54897051ee2)
+
+
+
+
+
+
+
+
+
 ## Description
 
 The Fitness60+ website is a calorie counting platform designed for individuals aged 60 and above. It allows users to track their daily calorie intake for four different meals and maintain a healthy diet. The website provides a modern and dynamic user interface, featuring a logo for the Fitness60+ company in the top right corner.
