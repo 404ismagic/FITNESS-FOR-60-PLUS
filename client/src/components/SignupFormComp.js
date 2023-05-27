@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-
 import { Form, Button, Alert } from 'react-bootstrap';
 import {useMutation} from '@apollo/client'
 import {ADD_PROFILE} from '../utils/mutations'
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
-  const [addProfile, {error}] = useMutation(ADD_PROFILE)
-
+  
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
+  const [addProfile, {error}] = useMutation(ADD_PROFILE, {
+    variables: {name:userFormData.username, email: userFormData.email, password: userFormData.password}
+  })
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);

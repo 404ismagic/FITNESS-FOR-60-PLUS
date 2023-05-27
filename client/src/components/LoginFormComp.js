@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const {login, error } = useMutation(LOGIN_PROFILE)
+  const [login, {error} ] = useMutation(LOGIN_PROFILE)
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -31,7 +31,7 @@ const LoginForm = () => {
         variables: { ...userFormData },
       });
       Auth.login(data.login.token);
-      navigate('/me'); // Redirect to the 'me' page after successful login
+      navigate('/me'); 
     } catch (err) {
       console.error(err);
       console.log(error);
