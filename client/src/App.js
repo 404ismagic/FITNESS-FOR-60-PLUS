@@ -1,6 +1,6 @@
 import MePages from './pages/MePages';
 import Login from './pages/LoginPg';
-import SearchResultsPage from './pages/SearchResultsPg';
+// import SearchResultsPage from './pages/SearchResultsPg';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
@@ -9,7 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
-
+// where i need to look for the calorie count
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
@@ -40,7 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/me" element={<MePages />} />
-            <Route path="/searchresults" element={<SearchResultsPage />} />
+            {/* <Route path="/searchresults/${searchTerm}" element={<SearchResultsPage />} /> */}
           </Routes>
         </div>
       </Router>

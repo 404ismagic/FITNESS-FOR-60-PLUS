@@ -20,7 +20,7 @@ const SearchResultsPage = () => {
 
   return (
     <div>
-      <h1>Search Results</h1>
+      <h1>Search Results</h1> 
       <SearchBarComp onSearch={handleSearch} />
       {searchResults.map((result) => (
         <div key={result.id}>
