@@ -1,7 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const foodSchema = require("./Food");
-const { Profile } = require("../models/Profile");
 const { AuthenticationError } = require("apollo-server-express");
 
 const profileSchema = new Schema(
