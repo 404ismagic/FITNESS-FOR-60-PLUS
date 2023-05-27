@@ -31,10 +31,13 @@ const MePages = () => {
   }
 
   return (
-    <div>
+  <div>
     <h1>My Page</h1>
     <div>
       <SearchBar />
+    </div>
+    <div>
+      <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} />
     </div>
     <div className="card-container">
       {days.map((day) => (
@@ -48,29 +51,14 @@ const MePages = () => {
         />
       ))}
     </div>
-    <div className="bottom-container">
-      <div>
-        <label>Current Calorie Count:</label>
-        <input
-          type="text"
-          value={currentCalorieCount}
-          onChange={(e) => setCurrentCalorieCount(e.target.value)}
-        />
+    <div>
+    <div>
+        <label>New Goal:</label>
+        <input type="text" value={newGoal} onChange={handleGoalChange} />
       </div>
-      <div>
-        <label>Goal Calorie Count:</label>
-        <input
-          type="text"
-          value={goals}
-          onChange={(e) => setGoals(e.target.value)}
-        />
-      </div>
-      <div>
-      {/* <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} /> */}
-</div>
+      <button onClick={() => setGoals(newGoal)}>Set Goal</button>
     </div>
   </div>
-  
   );
 };
 
