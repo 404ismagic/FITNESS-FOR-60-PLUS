@@ -45,38 +45,38 @@ const CalorieCounter = ({ day, saveCalories }) => {
         <h1>{day}: Calories</h1>
 
         <div className="meal-input">
-          <label>Meal 1:</label>
+          <label>Breakfast:</label>
           <input
             type="number"
             value={meal1Calories}
-            onChange={(e) => setMeal1Calories(parseInt(e.target.value, 10))}
+            onChange={(e) => setMeal1Calories(parseInt(e.target.value, 0))}
           />
         </div>
 
         <div className="meal-input">
-          <label>Meal 2:</label>
+          <label>Lunch:</label>
           <input
             type="number"
             value={meal2Calories}
-            onChange={(e) => setMeal2Calories(parseInt(e.target.value, 10))}
+            onChange={(e) => setMeal2Calories(parseInt(e.target.value, 0))}
           />
         </div>
 
         <div className="meal-input">
-          <label>Meal 3:</label>
+          <label>Dinner:</label>
           <input
             type="number"
             value={meal3Calories}
-            onChange={(e) => setMeal3Calories(parseInt(e.target.value, 10))}
+            onChange={(e) => setMeal3Calories(parseInt(e.target.value, 0))}
           />
         </div>
 
         <div className="meal-input">
-          <label>Meal 4:</label>
+          <label>Miscellaneous:</label>
           <input
             type="number"
             value={meal4Calories}
-            onChange={(e) => setMeal4Calories(parseInt(e.target.value, 10))}
+            onChange={(e) => setMeal4Calories(parseInt(e.target.value, 0))}
           />
         </div>
 
