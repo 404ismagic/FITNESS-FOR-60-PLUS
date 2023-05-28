@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import SearchBarComp from '../components/SearchBarComp';
-import { useQuery } from '@apollo/client';
-import { SEARCHED_FOOD } from '../utils/queries';
+import React, { useState } from 'react'
+import SearchBarComp from '../components/SearchBarComp'
+import { useQuery } from '@apollo/client'
+import { SEARCHED_FOOD } from '../utils/queries'
 
 const SearchResultsPage = () => {
-  const [searchResults, setSearchResults] = useState([]);
-  const { data, error, loading } = useQuery(SEARCHED_FOOD);
+  const [searchResults, setSearchResults] = useState([])
+  const { data, error, loading } = useQuery(SEARCHED_FOOD)
 
   const handleSearch = async (searchTerm) => {
     try {
-      const results = data?.search || [];
+      const results = data?.search || []
       setSearchResults(results);
     } catch (err) {
-      console.error(err);
-      console.log(error);
-      console.log(loading);
+      console.error(err)
+      console.log(error)
+      console.log(loading)
     }
   };
 
@@ -32,4 +32,4 @@ const SearchResultsPage = () => {
   );
 };
 
-export default SearchResultsPage;
+export default SearchResultsPage
