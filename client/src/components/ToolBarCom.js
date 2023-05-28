@@ -1,16 +1,17 @@
 import React from 'react';
 
-const ToolBar = ({ goals, currentCalorieCount }) => {
+const ToolBar = ({ goals, currentCalorieCount, resetCalories, setCalorieCount }) => {
+  const handleResetCalories = () => {
+    resetCalories()
+    setCalorieCount(0)
+  };
+
   return (
     <div className="top-bar">
       <div className="goals">
-        <h3>This weeks Goal {goals} / {currentCalorieCount}</h3>
-        {/* <p>{goals}</p> */}
+        <h3>This week's Goal: {goals} || {currentCalorieCount}</h3>
       </div>
-      {/* <div className="calorie-count">
-        <h3>Current Calorie Count:</h3>
-        <p>{currentCalorieCount}</p>
-      </div> */}
+      <button onClick={handleResetCalories}>Reset Calories</button>
     </div>
   );
 };
