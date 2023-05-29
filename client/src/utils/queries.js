@@ -16,14 +16,16 @@ query me {
   }
 `;
 export const SEARCHED_FOOD = gql`
-query Search($search: String!) {
+query Query($search: String!) {
   search(search: $search) {
     food_name
-    serving_unit
-    tag_name
+    locale
     serving_qty
+    serving_unit
     tag_id
-}
+    tag_name
+    common_type
+  }
 }
 `;
   

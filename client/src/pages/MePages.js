@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import CalorieCounter from '../components/CalorieCounterCom';
-import SearchBar from '../components/SearchBarComp';
+import SearchBarComp from '../components/SearchBarComp';
 import ToolBar from '../components/ToolBarCom';
 
 const MePages = () => {
@@ -37,27 +37,27 @@ const MePages = () => {
   }
 
   return (
+  <div>
+    <h1>My Page</h1>
     <div>
-      <h1>My Page</h1>
-      <div>
-        <SearchBar />
-      </div>
-      <div>
-      <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} resetCalories={resetCalories} setCalorieCount={setCalorieCount} />
-      </div>
-      <div className="card-container">
-        {days.map((day) => (
-          <CalorieCounter
-            key={day}
-            day={day}
-            saveCalories={saveCalories}
-            goals={goals}
-            currentCalorieCount={currentCalorieCount}
-            setCurrentCalorieCount={setCurrentCalorieCount}
-          />
-        ))}
-      </div>
-      <div>
+      <SearchBarComp />
+    </div>
+    <div>
+      <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} />
+    </div>
+    <div className="card-container">
+      {days.map((day) => (
+        <CalorieCounter
+          key={day}
+          day={day}
+          saveCalories={saveCalories}
+          goals={goals}
+          currentCalorieCount={currentCalorieCount}
+          setCurrentCalorieCount={setCurrentCalorieCount}
+        />
+      ))}
+    </div>
+    <div>
       <div>
           <label>New Goal:</label>
           <input type="text" value={newGoal} onChange={handleGoalChange} />
