@@ -7,7 +7,7 @@ import ToolBar from '../components/ToolBarCom';
 
 const MePages = () => {
   const { loading, data } = useQuery(QUERY_ME, {
-    fetchPolicy: 'no-cache',
+    fetchPolicy: 'no-cache'
   });
 
   const userData = data?.me || {};
@@ -68,4 +68,4 @@ const MePages = () => {
     );
   };
   
-  export default MePages
+  export default MePages;
