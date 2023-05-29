@@ -36,16 +36,7 @@ const SearchResultsPage = () => {
   return (
     <div>
       <h1>Search Results</h1>
-      {/* <form onSubmit={handleFormSubmit}>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleInputChange}
-      />
-      <button type="submit">Search</button>
-    </form> */}
-      {/* <SearchBarComp handleSearch={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
+     
       {results.map((result) => (
         <div key={result?.id}>
           <h3>{result?.food_name}</h3>
