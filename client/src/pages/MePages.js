@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import CalorieCounter from '../components/CalorieCounterCom';
-import SearchBar from '../components/SearchBarComp';
+import SearchBarComp from '../components/SearchBarComp';
 import ToolBar from '../components/ToolBarCom';
 
 const MePages = () => {
@@ -34,7 +34,7 @@ const MePages = () => {
   <div>
     <h1>My Page</h1>
     <div>
-      <SearchBar />
+      <SearchBarComp />
     </div>
     <div>
       <ToolBar goals={goals} currentCalorieCount={currentCalorieCount} />

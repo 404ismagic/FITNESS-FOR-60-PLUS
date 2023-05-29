@@ -40,7 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/me" element={<MePages />} />
-            {/* <Route path="/searchresults/${searchTerm}" element={<SearchResultsPage />} /> */}
+            {/* <Route path="/searchresults/:searchTerm" element={<SearchResultsPage />} /> Add the route for SearchResultsPage */}
           </Routes>
         </div>
       </Router>
