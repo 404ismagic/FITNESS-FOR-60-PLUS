@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import SearchBarComp from '../components/SearchBarComp';
+import React, { useState, } from 'react';
+import { useParams } from 'react-router-dom';
+// import SearchBarComp from '../components/SearchBarComp';
 import { useQuery } from '@apollo/client';
 import { SEARCHED_FOOD } from '../utils/queries';
-
+import getNutrimix from '../utils/API';
 const SearchResultsPage = () => {
+  let {searchTerm} = useParams()
   const [searchResults, setSearchResults] = useState([]);
-  const { data, error, loading } = useQuery(SEARCHED_FOOD);
-
+  // const [searchTerm, setSearchTerm] = useState('');
+  const { data, error, loading } = useQuery(SEARCHED_FOOD, {
+    variables: {search:searchTerm}
+  });
+  const results = data?.search || [];
   const handleSearch = async (searchTerm) => {
     try {
-      const results = data?.search || [];
+      
+      const results = await getNutrimix(searchTerm)
+      console.log(results);
       setSearchResults(results);
     } catch (err) {
       console.error(err);
@@ -17,15 +24,32 @@ const SearchResultsPage = () => {
       console.log(loading);
     }
   };
-console.log(searchTerm) 
+  // const handleInputChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
+
+  // const handleFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   getNutrimix(searchTerm);
+  //   // navigate(`/searchresults/${searchTerm}`);
+  // };
   return (
     <div>
       <h1>Search Results</h1>
-      <SearchBarComp onSearch={handleSearch} />
-      {searchResults.map((result) => (
-        <div key={result.id}>
-          <h3>{result.food_name}</h3>
-          <p>{result.serving_unit}</p>
+      {/* <form onSubmit={handleFormSubmit}>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={handleInputChange}
+      />
+      <button type="submit">Search</button>
+    </form> */}
+      {/* <SearchBarComp handleSearch={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
+      {results.map((result) => (
+        <div key={result?.id}>
+          <h3>{result?.food_name}</h3>
+          <p>{result?.serving_unit}</p>
         </div>
       ))}
     </div>

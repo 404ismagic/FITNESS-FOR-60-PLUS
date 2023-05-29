@@ -1,4 +1,5 @@
 function getNutrimix (foodstring){
+     console.log(foodstring)
     const example={"query":"2 slices white bread\n1 slice american cheese\n1 tbsp salted butter"}
     return fetch ("https://trackapi.nutritionix.com/v2/natural/nutrients",{
         method:"POST",
@@ -15,5 +16,5 @@ function getNutrimix (foodstring){
     
 }
 
-
-module.exports=getNutrimix
+export default getNutrimix
+// module.exports=getNutrimix

@@ -1,6 +1,6 @@
 import MePages from './pages/MePages';
 import Login from './pages/LoginPg';
-// import SearchResultsPage from './pages/SearchResultsPg';
+import SearchResultsPage from './pages/SearchResultsPg';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
@@ -40,7 +40,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/me" element={<MePages />} />
-            {/* <Route path="/searchresults/:searchTerm" element={<SearchResultsPage />} /> Add the route for SearchResultsPage */}
+            <Route path="/searchresults/:searchTerm" element={<SearchResultsPage />} /> 
+            {/* Add the route for SearchResultsPage */}
           </Routes>
         </div>
       </Router>
