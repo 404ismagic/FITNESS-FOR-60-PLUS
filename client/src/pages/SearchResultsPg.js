@@ -19,9 +19,9 @@ const SearchResultsPage = () => {
       console.log(results);
       setSearchResults(results);
     } catch (err) {
-      console.error(err);
-      console.log(error);
-      console.log(loading);
+      console.error(err)
+      console.log(error)
+      console.log(loading)
     }
   };
   // const handleInputChange = (event) => {
@@ -56,4 +56,4 @@ const SearchResultsPage = () => {
   );
 };
 
-export default SearchResultsPage;
+export default SearchResultsPage

@@ -11,9 +11,14 @@ const CalorieCounter = ({ day, saveCalories }) => {
   const [saveFood, { loading, error }] = useMutation(SAVE_FOOD);
 
   const handleSaveCalories = async () => {
+    const parsedMeal1Calories = parseInt(meal1Calories, 10) || 0;
+    const parsedMeal2Calories = parseInt(meal2Calories, 10) || 0;
+    const parsedMeal3Calories = parseInt(meal3Calories, 10) || 0;
+    const parsedMeal4Calories = parseInt(meal4Calories, 10) || 0;
+  
     const totalCalories =
-      meal1Calories + meal2Calories + meal3Calories + meal4Calories;
-
+      parsedMeal1Calories + parsedMeal2Calories + parsedMeal3Calories + parsedMeal4Calories;
+  
     try {
       const { data } = await saveFood({
         variables: {
@@ -21,7 +26,7 @@ const CalorieCounter = ({ day, saveCalories }) => {
           calories: totalCalories,
         },
       });
-
+  
       const updatedCalorieCount = data?.saveFood?.totalCalories;
       if (updatedCalorieCount) {
         saveCalories(updatedCalorieCount);
@@ -30,11 +35,18 @@ const CalorieCounter = ({ day, saveCalories }) => {
     } catch (error) {
       console.error('Error saving calories:', error);
     }
+  
+    console.log('Meal 1 calories:', parsedMeal1Calories);
+    console.log('Meal 2 calories:', parsedMeal2Calories);
+    console.log('Meal 3 calories:', parsedMeal3Calories);
+    console.log('Meal 4 calories:', parsedMeal4Calories);
+  };
 
-    console.log('Meal 1 calories:', meal1Calories);
-    console.log('Meal 2 calories:', meal2Calories);
-    console.log('Meal 3 calories:', meal3Calories);
-    console.log('Meal 4 calories:', meal4Calories);
+  const handleResetCalories = () => {
+    setMeal1Calories(0);
+    setMeal2Calories(0);
+    setMeal3Calories(0);
+    setMeal4Calories(0);
   };
 
   return (
@@ -84,6 +96,9 @@ const CalorieCounter = ({ day, saveCalories }) => {
           {loading ? 'Saving...' : 'Save Calories'}
         </button>
 
+        <button onClick={handleResetCalories} disabled={loading}>
+          {loading ? 'Clearing...' : 'Clear Calories'}
+        </button>
         {error && <p>Error saving calories: {error.message}</p>}
       </div>
     </div>
