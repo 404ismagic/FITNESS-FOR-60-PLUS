@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom'
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
@@ -13,15 +12,22 @@ const MePages = () => {
 
   const userData = data?.me || {};
   const [goals, setGoals] = useState(userData.goals || '');
+  const [setCalorieCount] = useState(0);
   const [currentCalorieCount, setCurrentCalorieCount] = useState(userData.currentCalorieCount || 0);
   const [newGoal, setNewGoal] = useState('');
-
+  
   const handleGoalChange = (e) => {
     setNewGoal(e.target.value);
   };
 
   const saveCalories = (totalCalories) => {
     setCurrentCalorieCount(totalCalories);
+    setCalorieCount(totalCalories);
+  };
+
+  const resetCalories = () => {
+    setCurrentCalorieCount(0);
+    setCalorieCount(0);
   };
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -52,14 +58,14 @@ const MePages = () => {
       ))}
     </div>
     <div>
-    <div>
-        <label>New Goal:</label>
-        <input type="text" value={newGoal} onChange={handleGoalChange} />
+      <div>
+          <label>New Goal:</label>
+          <input type="text" value={newGoal} onChange={handleGoalChange} />
+        </div>
+        <button onClick={() => setGoals(newGoal)}>Set Goal</button>
       </div>
-      <button onClick={() => setGoals(newGoal)}>Set Goal</button>
     </div>
-  </div>
-  );
-};
-
-export default MePages;
+    );
+  };
+  
+  export default MePages;
